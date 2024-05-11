@@ -146,7 +146,22 @@ void BookManager::editBook() {
 }
 void BookManager::searchBook()
 {
+	string word,line;
+	cout << "enter the data of a the book you want to search about in a specific department " << endl;
+	cout << "enter the book's department" << endl;
+	getline(cin, department);
+	cout << "enter the book's ID, Book's title or Book's author" << endl;
+	getline(cin, word);
+	string filename = "c:\\MSA Programming Application\\" + department + ".csv";
+	ifstream file(filename);
+	while (getline(file, line))
+	{
+		if (line.find(word) != string::npos) {
+			cout << line << endl;
+		}
+	}
 
+	file.close();
 }
 void BookManager::issueBook()
 {
