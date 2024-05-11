@@ -9,56 +9,28 @@ BookManager::BookManager()
 {
 	title = " ", author = " ", department = " ", BookId = 0;
 }
-void BookManager :: addBook()
+void BookManager::addBook()
 {
-	cin.ignore();
-	cout << "enter the data of a book in a specific department " << endl;
+	cout << "enter the data of a the book you want to search about in a specific department " << endl;
 	cout << "enter the book's department" << endl;
 	getline(cin, department);
+	if (department != "Mechanical" || department != "Computer" || department != "Architectrue" ||
+		department != "Civil" || department != "Electronics" || department != "Electrical");
+	{
+		cout << "the department you enter does not exist in the system" << endl;
+		cout << "enter the book's department" << endl;
+		getline(cin, department);
+	}
 	cout << "enter the book's title " << endl;
 	getline(cin, title);
 	cout << "enter the book's author " << endl;
 	getline(cin, author);
 	cout << "enter the book's ID " << endl;
 	cin >> BookId;
-	if (department == "Mechanical")
-	{
-		ofstream Mechfile("c:\\MSA Programming Application\\Mechanical.csv", ios::app);
-		Mechfile << BookId << "," << title << "," << author << "\n";
-		Mechfile.close();
-	}
-	else if (department == "Computer")
-	{
-		ofstream Compfile("c:\\MSA Programming Application\\Computer.csv", ios::app);
-		Compfile << BookId << "," << title << "," << author << "\n";
-		Compfile.close();
-	}
-	else if (department == "Electronics")
-	{
-		ofstream Elecfile("c:\\MSA Programming Application\\Electronics.csv", ios::app);
-		Elecfile << BookId << "," << title << "," << author << "\n";
-		Elecfile.close();
-	}
-	else if (department == "Civil")
-	{
-		ofstream Civilfile("c:\\MSA Programming Application\\Civil.csv", ios::app);
-		Civilfile << BookId << "," << title << "," << author << "\n";
-		Civilfile.close();
-	}
-	else if (department == "Architecture")
-	{
-		ofstream Archfile("c:\\MSA Programming Application\\Architecture.csv", ios::app);
-		Archfile << BookId << "," << title << "," << author << "\n";
-		Archfile.close();
-	}
-	else if (department == "Electrical")
-	{
-		ofstream Electfile("c:\\MSA Programming Application\\Electrical.csv", ios::app);
-		Electfile << BookId << "," << title << "," << author << "\n";
-		Electfile.close();
-	}
-	else
-		cout << "the department you enter does not exist in the system" << endl;
+	string filename = "c:\\MSA Programming Application\\" + department + ".csv";
+	ofstream file(filename, ios::app);
+	file << BookId << "," << title << "," << author << "\n";
+	file.close();
 	cout << "the book has been added to the library" << endl;
 }
 void BookManager::deleteBook()

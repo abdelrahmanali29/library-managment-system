@@ -49,17 +49,17 @@ int main()
 		if (choice2 == 1)
 			b.addBook();
 		if (choice2 == 2)
-			b.deleteBook();
+			//b.deleteBook();
 		if (choice2 == 3)
-			b.editBook();
+			//b.editBook();
 		if (choice2 == 4)
-			b.searchBook();
+			//b.searchBook();
 		if (choice2 == 5)
-			b.issueBook();
+			//b.issueBook();
 		if (choice2 == 6)
-			b.viewBooks();
+			//b.viewBooks();
 		if (choice2 == 7)
-			a.displayMainMenu2();
+			//a.displayMainMenu2();
 		if (choice2 == 8)
 			return 0;
 	}
