@@ -79,35 +79,9 @@ else
 	cout << "book " << word << " is not found in the file." << endl;
 }
 }
-// not yet complete
 void BookManager::editBook() 
 {
-	string word, line, authornew, titlenew;
-	int idnew;
-	cout << "enter the data of a the book you want to edit its details in a specific department " << endl;
-	cout << "enter the book's department" << endl;
-	getline(cin, department);
-	cout << "enter the book's ID, Book's title or Book's author" << endl;
-	getline(cin, word);
-	cout << "enter book's new ID" << endl;
-	cin >> idnew;
-	cout << "enter book's new title" << endl;
-	cin.ignore();
-	getline(cin, titlenew);
-	cout << "enter book's new author" << endl;
-	getline(cin, authornew);
-	string filename = "c:\\MSA Programming Application\\" + department + ".csv";
-	string newdata = idnew + "," + titlenew + "," + authornew + "\n";
-	ifstream file(filename);
-	ofstream file(filename);
-	while (getline(file, line))
-	{
-		if (line.find(word) != string::npos) {
-			string olddata = line;
-		}
-	}
-
-	file.close();
+	
 } 
 // not yet complete
 void BookManager::searchBook()
