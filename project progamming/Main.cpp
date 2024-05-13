@@ -1,7 +1,7 @@
 #include "MainMenu.h"
 #include "BookManager.h"
 #include <iostream>
-#include <string.h>
+#include <string>
 using namespace std;
 int displayBookManager()
 {
@@ -27,7 +27,7 @@ int displayBookManager()
 }
 int main()
 {
-	int choice = 0, x = 0, y = 0;
+	int choice = 0;
 	MainMenu a;
 	BookManager b;
 	//StudentRecordManager c;
@@ -49,17 +49,17 @@ int main()
 		if (choice2 == 1)
 			b.addBook();
 		if (choice2 == 2)
-			//b.deleteBook();
+			b.deleteBook();
 		if (choice2 == 3)
 			//b.editBook();
 		if (choice2 == 4)
-			//b.searchBook();
+			b.searchBook();
 		if (choice2 == 5)
 			//b.issueBook();
 		if (choice2 == 6)
-			//b.viewBooks();
+			b.viewBooks();
 		if (choice2 == 7)
-			//a.displayMainMenu2();
+			a.displayMainMenu2();
 		if (choice2 == 8)
 			return 0;
 	}
@@ -76,8 +76,5 @@ int main()
 			<< "-------------------------------------" << endl;
 		return 0;
 	}
-		
-	else
-		return 0;
 }
 
