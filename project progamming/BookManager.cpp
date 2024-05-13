@@ -1,9 +1,7 @@
 #include "BookManager.h"
 #include <iostream>
 #include <string>
-#include <sstream>
 #include <fstream>
-#include <vector>
 using namespace std;
 BookManager::BookManager()
 {
@@ -57,13 +55,9 @@ ofstream Temp("temp.txt");
 while (getline(file, line))
 {
 	if (line.find(word) == string::npos)
-	{
 		Temp << line << endl;
-	}
 	else
-	{
 		isfound = true;
-	}
 }
 file.close();
 Temp.close();
