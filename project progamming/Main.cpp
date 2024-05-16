@@ -1,5 +1,7 @@
 #include "MainMenu.h"
 #include "BookManager.h"
+#include "StudentRecordManager.h"
+#include "InputManager.h"
 #include <iostream>
 #include <string>
 using namespace std;
@@ -11,14 +13,13 @@ int displayBookManager()
 		<< "2- Delete Book \n"
 		<< "3- Edit Book \n"
 		<< "4- Search Book\n"
-		<< "5- issue Book\n"
-		<< "6- View Book\n"
-		<< "7- return to Main Menu\n"
-		<< "8-exit\n"
+		<< "5- View Book\n"
+		<< "6- return to Main Menu\n"
+		<< "7-exit\n"
 		<< "------------------------------------";
 	cout << "\nplease select one choice" << endl;
 	cin >> choice2;
-	if (choice2 < 1 || choice2 > 8)
+	if (choice2 < 1 || choice2 > 7)
 	{
 		cout << "please, enter a valid number between 1 and 8" << endl;
 		cin >> choice2;
@@ -28,10 +29,11 @@ int displayBookManager()
 int main()
 {
 	int choice = 0;
+	string bookid = " ";
 	MainMenu a;
 	BookManager b;
-	//StudentRecordManager c;
-	//InputManager e;
+	StudentRecordManager c;
+	InputManager d;
 	a.displayMainMenu();
 	a.displayMainMenu2();
 	cout << "\nplease select one choice" << endl;
@@ -41,11 +43,9 @@ int main()
 		cout << "please, enter a valid number between 1 and 4" << endl;
 		cin >> choice;
 	}
-	system("CLS");
 	if (choice == 1)
 	{
 		int choice2 = displayBookManager();
-		system("CLS");
 		if (choice2 == 1)
 			b.addBook();
 		if (choice2 == 2)
@@ -55,8 +55,10 @@ int main()
 		if (choice2 == 4)
 			b.searchBook();
 		if (choice2 == 5)
-			//b.issueBook();
+			b.viewBooks();
 		if (choice2 == 6)
+			a.displayMainMenu2();
+		if (choice2 == 7)
 			b.viewBooks();
 		if (choice2 == 7)
 			a.displayMainMenu2();
@@ -65,10 +67,12 @@ int main()
 	}
 	else if (choice == 2)
 	{
+		c.issueRecord();
 	}
 	else if (choice == 3)
 	{
-
+		bookid = d.getdata();
+		d.CheckId(bookid);
 	}
 	else if (choice == 4)
 	{
