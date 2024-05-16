@@ -7,7 +7,6 @@ class BookManager
 {
 private:
 	string title, author;
-protected:
 	string department;
 	int BookId;
 public:
@@ -16,7 +15,6 @@ public:
 	void deleteBook();
 	void editBook();
 	void searchBook();
-	void issueBook();
 	void viewBooks();
 };
 #endif
