@@ -3,12 +3,12 @@
 #define StudentRecordManger_h
 #include <string>
 using namespace std;
-class StudentRecordManager
+class StudentRecordManager 
 {
 protected:
 	string studentName;
 	int studentID;
-	int bookID;
+	string bookID;
 	string department;
 public :
 	StudentRecordManager();
