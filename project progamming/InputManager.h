@@ -2,10 +2,11 @@
 #ifndef InputManager_h
 #define InputManager_h
 #include "StudentRecordManager.h"
-class InputManager
+
+class InputManager : public StudentRecordManager 
 {
 public :
-	int getdata();
-	int CheckId(int BookID);
+	string getdata();
+	void CheckId(string bookID);	
 };
 #endif
