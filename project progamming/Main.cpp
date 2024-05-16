@@ -48,21 +48,17 @@ int main()
 		int choice2 = displayBookManager();
 		if (choice2 == 1)
 			b.addBook();
-		if (choice2 == 2)
+		else if (choice2 == 2)
 			b.deleteBook();
-		if (choice2 == 3)
+		else if (choice2 == 3)
 			//b.editBook();
-		if (choice2 == 4)
+		else if (choice2 == 4)
 			b.searchBook();
-		if (choice2 == 5)
+		else if (choice2 == 5)
 			b.viewBooks();
-		if (choice2 == 6)
+		else if (choice2 == 6)
 			a.displayMainMenu2();
-		if (choice2 == 7)
-			b.viewBooks();
-		if (choice2 == 7)
-			a.displayMainMenu2();
-		if (choice2 == 8)
+		else if (choice2 == 7)
 			return 0;
 	}
 	else if (choice == 2)
