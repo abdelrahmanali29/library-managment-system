@@ -7,10 +7,11 @@
 using namespace std;
 int displayBookManager()
 {
-	int choice2=0;
+	int choice2 = 0;
 	cout << "Book Manager:\n"
 		<< "1- Add Book\n"
 		<< "2- Delete Book \n"
+
 		<< "3- Edit Book \n"
 		<< "4- Search Book\n"
 		<< "5- View Book\n"
@@ -43,6 +44,7 @@ int main()
 		cout << "please, enter a valid number between 1 and 4" << endl;
 		cin >> choice;
 	}
+
 	if (choice == 1)
 	{
 		int choice2 = displayBookManager();
@@ -50,8 +52,7 @@ int main()
 			b.addBook();
 		else if (choice2 == 2)
 			b.deleteBook();
-		else if (choice2 == 3)
-			//b.editBook();
+		else if (choice2 == 3) {}
 		else if (choice2 == 4)
 			b.searchBook();
 		else if (choice2 == 5)
@@ -68,13 +69,18 @@ int main()
 	else if (choice == 3)
 	{
 		bookid = d.getdata();
+
 		d.CheckId(bookid);
+		a.displayMainMenu2();
+		cout << "\nplease select one choice" << endl;
+		cin >> choice;
+		c.issueRecord();
 	}
 	else if (choice == 4)
 	{
 		cout << "The application will be closed now "
+
 			<< "-------------------------------------" << endl;
 		return 0;
 	}
 }
-
