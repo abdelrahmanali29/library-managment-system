@@ -3,10 +3,12 @@
 #define InputManager_h
 #include "StudentRecordManager.h"
 
-class InputManager : public StudentRecordManager 
+class InputManager : public StudentRecordManager
 {
-public :
+
+public:
 	string getdata();
-	void CheckId(string bookID);	
+	void CheckId(string bookID);
+
 };
 #endif
