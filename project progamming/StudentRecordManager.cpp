@@ -9,8 +9,9 @@ StudentRecordManager::StudentRecordManager()
 }
 void StudentRecordManager::issueRecord()
 {
-	cin.ignore();
-	ofstream booksfile("c:\\MSA Programming Application\\issued book.csv", ios::app);
-	booksfile << bookID << "," << studentID << "\n";
-	booksfile.close();
+	string filename = "c:\\MSA Programming Application\\issuedBook.csv";
+	ofstream file(filename);
+	file << bookID << "," << studentID << "\n";
+	file.close();
+	cout << "the book has been issued to the student" << endl;
 }
